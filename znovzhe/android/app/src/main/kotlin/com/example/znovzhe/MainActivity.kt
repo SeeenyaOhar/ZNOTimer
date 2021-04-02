@@ -1,4 +1,4 @@
-package com.example.znovzhe
+package com.senyastr.ZnoNeZaBarom
 
 import io.flutter.embedding.android.FlutterActivity
 

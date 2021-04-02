@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1024 1024" enable-background="new 0 0 1024 1024" xml:space="preserve">
+<g id="Layer_1">
+	
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="201.4937" y1="688.4235" x2="200.2533" y2="-29.7711" gradientTransform="matrix(-1 0 0 1 606.5223 0)">
+		<stop  offset="5.783583e-02" style="stop-color:#39B54A"/>
+		<stop  offset="0.3109" style="stop-color:#8CC63F"/>
+	</linearGradient>
+	<path fill="url(#SVGID_1_)" d="M764,761.5c-88-104-181.6-226.9-273.4-369.6c-4.2-6.5-14.2-21.6-26.6-40.5
+		c-74.4-114-132-206.1-170-267.7C267.4,189.5,232.9,305.2,188,428C142.8,551.6,94.1,662.9,45.8,761.5"/>
+	<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="524.799" y1="827.2609" x2="523.2499" y2="-69.6507">
+		<stop  offset="5.783583e-02" style="stop-color:#39B54A"/>
+		<stop  offset="0.3525" style="stop-color:#8CC63F"/>
+	</linearGradient>
+	<path fill="url(#SVGID_2_)" d="M76.5,918.5C186.4,788.6,303.3,635.2,418,456.9c5.2-8.1,17.8-27,33.2-50.6
+		C544.1,264,616.1,148.9,663.5,72c31.6,132.4,74,279.3,131.5,436c56.5,153.8,117.9,290.9,178.4,410.5"/>
+	<path fill="#FFFFFF" stroke="#FFFFFF" stroke-width="0.25" stroke-miterlimit="10" d="M294,84"/>
+	<polygon fill="#FFFFFF" points="389.3,500.9 497,450 595,520 685,431 754,507 783.2,475.5 663,72 	"/>
+	<polygon fill="#FFFFFF" points="223.6,325.7 266,396 326,350 374,394 436.2,308.6 294,84 	"/>
+</g>
+<g id="Layer_2" display="none">
+	<path display="inline" fill="#FFFFFF" d="M380.1,623h406.5c11.5,0,20.8,15.4,20.8,34.3v184.3c0,19-9.3,34.3-20.8,34.3H380.1
+		c-11.5,0-20.8-15.4-20.8-34.3V657.4C359.4,638.4,368.7,623,380.1,623z"/>
+	
+		<line display="inline" fill="none" stroke="#000000" stroke-width="4" stroke-miterlimit="10" x1="460.4" y1="647" x2="699.4" y2="647"/>
+	
+		<line display="inline" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="403.4" y1="688" x2="742.9" y2="687.5"/>
+	
+		<line display="inline" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="403.4" y1="702" x2="742.9" y2="701.5"/>
+	
+		<line display="inline" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="403.4" y1="716" x2="742.9" y2="715.5"/>
+	
+		<line display="inline" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" x1="403.4" y1="730" x2="572.9" y2="730"/>
+	
+		<rect x="400.4" y="772" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="312" height="80"/>
+	
+		<rect x="400.4" y="773" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="78" height="78"/>
+	
+		<rect x="478.4" y="773" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="78" height="78"/>
+	
+		<rect x="556.4" y="773" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="78" height="78"/>
+	
+		<rect x="634.4" y="773" display="inline" fill="#FFFFFF" stroke="#000000" stroke-width="2" stroke-miterlimit="10" width="78" height="78"/>
+	<text transform="matrix(1 0 0 1 415.8192 840.0161)" display="inline" font-family="'OpenSans'" font-size="72.8435px">А</text>
+	<text transform="matrix(1 0 0 1 491.8192 840.0161)" display="inline" font-family="'OpenSans'" font-size="72.8435px">Б</text>
+	<text transform="matrix(1 0 0 1 567.8192 840.0161)" display="inline" font-family="'OpenSans'" font-size="72.8435px">В</text>
+	<text transform="matrix(1 0 0 1 657.8192 840.0161)" display="inline" font-family="'OpenSans'" font-size="72.8435px">Г</text>
+</g>
+</svg>

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'languageManager.dart';
-import 'main.dart';
+import '../view/main/main.dart';
 
 class SubjectValues {
   static SvgPicture getIcon(

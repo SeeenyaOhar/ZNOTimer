@@ -1,11 +1,12 @@
+import 'package:ZnoNeZaBarom/model/counter/counters.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'main.dart';
+import '../../view/main/main.dart';
 
 class ZnoCountersSave {
   static final String saveKey = "subs";
   static save() async {
-    var state = MyHomePageState.counters.toList();
+    var state = CounterManager.counters.toList();
     state.remove(state
         .where((x) => x.subject == Subject.firstOne)
         .toList()[0]); // removing the first one
@@ -24,7 +25,7 @@ class ZnoCountersSave {
   }
 
   static Future<List<Subject>> init() async {
-    List<Subject> subjects = List();
+    List<Subject> subjects = [];
     var sharedPrefs = await SharedPreferences.getInstance();
 
     var subsStr = sharedPrefs.getString(saveKey);

@@ -1,11 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="253776dd-0a42-43b4-a61e-55a8885dc48c" name="Default Changelist" comment="" />
+    <list default="true" id="253776dd-0a42-43b4-a61e-55a8885dc48c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/key.jks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/ic_launcher-playstore.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/values/ic_launcher_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/znovzhe/assets/pencil.riv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ZNOTimer.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ZNOTimer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/debug/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/debug/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/main/kotlin/com/example/znovzhe/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/kotlin/com/example/znovzhe/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/app/src/profile/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/app/src/profile/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/ios/Runner/Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/lib/addSubjectCounter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/lib/addSubjectCounter.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/lib/languageManager.dart" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/lib/languageManager.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/lib/themeSelector.dart" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/lib/themeSelector.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/znovzhe/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/znovzhe/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="zhyhzhjni77xdesw" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nYtgByb6HMbYptJ7hs6Xw5e2KM" />
   <component name="ProjectViewState">
@@ -14,15 +61,29 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="E:/Tools/androidsdk" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="last_opened_file_path" value="E:/Tools/dart-sdk" />
+    <property name="io.flutter.reload.alreadyRun" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/znovzhe" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flutter.main.dart">
+    <configuration name="main.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/znovzhe/lib/main.dart" />
+      <option name="workingDirectory" value="$PROJECT_DIR$/znovzhe" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="FlutterRunConfigurationType" factoryName="Flutter">
+      <option name="filePath" value="$PROJECT_DIR$/znovzhe/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main.dart (1)" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/znovzhe/lib/main.dart" />
       <method v="2" />
     </configuration>
@@ -30,6 +91,11 @@
       <option name="filePath" value="$PROJECT_DIR$/znovzhe/lib/main.dart" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Dart Command Line App.main.dart" />
+      <item itemvalue="Flutter.main.dart (1)" />
+      <item itemvalue="Flutter.main.dart" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -45,25 +111,82 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="174" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1611579361336">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="312" y="118" key="#Project_Structure" timestamp="1614850065658">
+      <screen x="0" y="30" width="1440" height="870" />
+    </state>
+    <state x="312" y="118" key="#Project_Structure/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614850065658" />
+    <state x="174" y="116" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614007400726">
+      <screen x="0" y="30" width="1440" height="870" />
     </state>
     <state x="174" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860/1440.0.1280.984@0.0.1440.860" timestamp="1611579361336" />
-    <state x="449" y="220" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1611579178806">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="174" y="116" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614007400726" />
+    <state x="449" y="253" key="#com.intellij.ide.util.TreeFileChooserDialog" timestamp="1614007080735">
+      <screen x="0" y="30" width="1440" height="870" />
     </state>
     <state x="449" y="220" key="#com.intellij.ide.util.TreeFileChooserDialog/0.0.1440.860/1440.0.1280.984@0.0.1440.860" timestamp="1611579178806" />
-    <state x="500" y="184" key="FileChooserDialogImpl" timestamp="1611579254954">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="449" y="253" key="#com.intellij.ide.util.TreeFileChooserDialog/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614007080735" />
+    <state x="412" y="193" key="#main.dart" timestamp="1614006978065">
+      <screen x="0" y="30" width="1440" height="870" />
+    </state>
+    <state x="412" y="193" key="#main.dart/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614006978065" />
+    <state x="575" y="225" key="AndroidProcessChooserDialog" timestamp="1614007087879">
+      <screen x="0" y="30" width="1440" height="870" />
+    </state>
+    <state x="575" y="225" key="AndroidProcessChooserDialog/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614007087879" />
+    <state x="500" y="216" key="FileChooserDialogImpl" timestamp="1615400872540">
+      <screen x="0" y="30" width="1440" height="870" />
     </state>
     <state x="500" y="184" key="FileChooserDialogImpl/0.0.1440.860/1440.0.1280.984@0.0.1440.860" timestamp="1611579254954" />
-    <state x="221" y="72" key="SettingsEditor" timestamp="1611579340956">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="500" y="216" key="FileChooserDialogImpl/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1615400872540" />
+    <state width="1237" height="221" key="GridCell.Tab.0.bottom" timestamp="1614856028143">
+      <screen x="1440" y="0" width="1280" height="1024" />
+    </state>
+    <state width="1397" height="224" key="GridCell.Tab.0.bottom/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614850228831" />
+    <state width="1237" height="221" key="GridCell.Tab.0.bottom/0.30.1440.870/1440.0.1280.1024@1440.0.1280.1024" timestamp="1614856028143" />
+    <state width="1237" height="221" key="GridCell.Tab.0.center" timestamp="1614856028142">
+      <screen x="1440" y="0" width="1280" height="1024" />
+    </state>
+    <state width="1397" height="224" key="GridCell.Tab.0.center/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614850228831" />
+    <state width="1237" height="221" key="GridCell.Tab.0.center/0.30.1440.870/1440.0.1280.1024@1440.0.1280.1024" timestamp="1614856028142" />
+    <state width="1237" height="221" key="GridCell.Tab.0.left" timestamp="1614856028142">
+      <screen x="1440" y="0" width="1280" height="1024" />
+    </state>
+    <state width="1397" height="224" key="GridCell.Tab.0.left/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614850228831" />
+    <state width="1237" height="221" key="GridCell.Tab.0.left/0.30.1440.870/1440.0.1280.1024@1440.0.1280.1024" timestamp="1614856028142" />
+    <state width="1237" height="221" key="GridCell.Tab.0.right" timestamp="1614856028142">
+      <screen x="1440" y="0" width="1280" height="1024" />
+    </state>
+    <state width="1397" height="224" key="GridCell.Tab.0.right/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614850228831" />
+    <state width="1237" height="221" key="GridCell.Tab.0.right/0.30.1440.870/1440.0.1280.1024@1440.0.1280.1024" timestamp="1614856028142" />
+    <state width="1380" height="272" key="GridCell.Tab.1.bottom" timestamp="1614007407403">
+      <screen x="0" y="30" width="1440" height="870" />
+    </state>
+    <state width="1380" height="272" key="GridCell.Tab.1.bottom/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614007407403" />
+    <state width="1380" height="272" key="GridCell.Tab.1.center" timestamp="1614007407402">
+      <screen x="0" y="30" width="1440" height="870" />
+    </state>
+    <state width="1380" height="272" key="GridCell.Tab.1.center/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614007407402" />
+    <state width="1380" height="272" key="GridCell.Tab.1.left" timestamp="1614007407402">
+      <screen x="0" y="30" width="1440" height="870" />
+    </state>
+    <state width="1380" height="272" key="GridCell.Tab.1.left/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614007407402" />
+    <state width="1380" height="272" key="GridCell.Tab.1.right" timestamp="1614007407403">
+      <screen x="0" y="30" width="1440" height="870" />
+    </state>
+    <state width="1380" height="272" key="GridCell.Tab.1.right/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614007407403" />
+    <state x="221" y="49" key="SettingsEditor" timestamp="1614065597945">
+      <screen x="0" y="30" width="1440" height="870" />
     </state>
     <state x="221" y="72" key="SettingsEditor/0.0.1440.860/1440.0.1280.984@0.0.1440.860" timestamp="1611579340956" />
-    <state x="416" y="254" key="com.intellij.ide.util.TipDialog" timestamp="1611579152143">
-      <screen x="0" y="0" width="1440" height="860" />
+    <state x="221" y="49" key="SettingsEditor/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614065597945" />
+    <state x="1810" y="302" key="com.intellij.ide.util.TipDialog" timestamp="1615105152056">
+      <screen x="1440" y="0" width="1280" height="1024" />
     </state>
     <state x="416" y="254" key="com.intellij.ide.util.TipDialog/0.0.1440.860/1440.0.1280.984@0.0.1440.860" timestamp="1611579152143" />
+    <state x="1810" y="302" key="com.intellij.ide.util.TipDialog/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1615105152056" />
+    <state x="416" y="59" width="607" height="801" key="find.popup" timestamp="1614850091971">
+      <screen x="0" y="30" width="1440" height="870" />
+    </state>
+    <state x="416" y="59" width="607" height="801" key="find.popup/0.30.1440.870/1440.0.1280.1024@0.30.1440.870" timestamp="1614850091971" />
   </component>
 </project>

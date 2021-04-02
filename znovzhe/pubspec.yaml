@@ -1,4 +1,4 @@
-name: znovzhe
+name: ZnoNeZaBarom
 description: Zno Vzhe близько.
 
 # The following line prevents the package from being accidentally published to
@@ -15,7 +15,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 1.0.0+1
+version: 1.0.6
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -23,20 +23,32 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.0
 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  flutter_svg: ^0.19.0
+  flutter_svg: ^0.21.0-nullsafety.0
   cupertino_icons: ^1.0.0
   shared_preferences: ^0.5.12+4
-  
+  dynamic_theme: ^1.0.1
+  google_mobile_ads: ^0.11.0+4
+  flare_flutter: ^2.0.6
+  rive: ^0.6.8
+
+
+
+
+
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_localizations:
-    sdk: flutter 
+    sdk: flutter
+
+
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -63,6 +75,7 @@ flutter:
   - assets/geography.svg
   - assets/spanish.svg
   - assets/german.svg
+  - assets/pencil.riv
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,3 +1,5 @@
+import 'package:ZnoNeZaBarom/model/subjects/subjectManager.dart';
+import 'package:ZnoNeZaBarom/model/subjects/subjects.dart';
 import 'package:ZnoNeZaBarom/viewmodel/theme.dart';
 import 'package:ZnoNeZaBarom/viewmodel/theme.dart';
 import 'package:ZnoNeZaBarom/model/counter/znoCountersSave.dart';
@@ -35,9 +37,13 @@ class CounterManager {
 
   static add(ZnoCounter counter) {
     CounterManager.counters.add(counter);
+    SubjectManager.subjectsShown.add(counter.subject);
   }
 
-  static remove() {}
+  static remove(ZnoCounter counter) {
+    CounterManager.counters.remove(counter);
+    SubjectManager.subjectsShown.remove(counter.subject);
+  }
 
   static start(DynamicState view, BuildContext context) async {
     while (true) {

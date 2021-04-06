@@ -32,6 +32,8 @@ class LocalizationTool {
 
   String get appName => getValue("appName");
 
+  String get darkModeSetting => getValue("darkMode");
+
   String getValue(String key) {
     return _localizedValues[locale.languageCode][key];
   }
@@ -72,7 +74,8 @@ class LocalizationTool {
       "spanishLanguage" : "Іспанська мова",
       "chemistry" : "Хімія",
       "frenchLanguage" : "Французька мова",
-      "emptyListRecommendation" : "Ви можете додати предмети знизу."
+      "emptyListRecommendation" : "Ви можете додати предмети знизу.",
+      "darkMode" : "Темний режим"
     },
     'uk':{
 
@@ -96,7 +99,8 @@ class LocalizationTool {
   "spanishLanguage" : "Іспанська мова",
   "chemistry" : "Хімія",
   "frenchLanguage" : "Французька мова",
-  "emptyListRecommendation" : "Ви можете додати предмети внизу."
+  "emptyListRecommendation" : "Ви можете додати предмети внизу.",
+  "darkMode" : "Темний режим"
     },
     'en': {
       "appName" : "ZNO ne za goramy",
@@ -119,7 +123,8 @@ class LocalizationTool {
       "spanishLanguage" : "The Spanish Language",
       "chemistry" : "Chemistry",
       "frenchLanguage" : "The French Language",
-      "emptyListRecommendation" : "You can add subjects down below."
+      "emptyListRecommendation" : "You can add subjects down below.",
+      "darkMode" : "Dark mode"
     },
     'ru': {
       "appName" : "ЗНО не за горами",
@@ -141,7 +146,8 @@ class LocalizationTool {
       "spanishLanguage" : "Испанский язык",
       "chemistry" : "Химия",
       "frenchLanguage" : "Французкий язык",
-      "emptyListRecommendation" : "Вы можете добавить предметы внизу."
+      "emptyListRecommendation" : "Вы можете добавить предметы внизу.",
+      "darkMode" : "Черный режим"
     },
   };
 

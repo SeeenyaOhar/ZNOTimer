@@ -1,3 +1,4 @@
+import 'package:ZnoNeZaBarom/model/subjects/subjects.dart';
 import 'package:ZnoNeZaBarom/view/settings/settings.dart';
 import 'package:ZnoNeZaBarom/viewmodel/theme.dart';
 import 'package:flare_flutter/flare_actor.dart';
@@ -130,10 +131,9 @@ class MyHomePageState extends DynamicState<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     var newSubjectFloatingButton = _buildAddNewSubjectFloatingButton();
-    var emptyListWidget = _buildEmptySubjectList();
     var appbarWidget = _buildAppBar();
     var body =
-    _buildBody(newSubjectFloatingButton, emptyListWidget, appbarWidget);
+    _buildBody(newSubjectFloatingButton, appbarWidget);
     var gestureDetector = _buildGestureDetector(body);
     var finalPage = gestureDetector;
     return finalPage;
@@ -156,37 +156,7 @@ class MyHomePageState extends DynamicState<MyHomePage> {
     );
   }
 
-  Widget _buildEmptySubjectList() {
-    return Expanded(
-        child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.all(30),
-                child: Text(
-                  LocalizationTool
-                      .of(context)
-                      .emptyListRecommendation,
-                  style: Theme
-                      .of(context)
-                      .textTheme
-                      .headline6,
-                  textAlign: TextAlign.center,
-                ),
-              ),
-              Padding(
-                  padding: EdgeInsets.all(30),
-                  child: Icon(Icons.arrow_downward,
-                      size: 32,
-                      color: Theme
-                          .of(context)
-                          .textTheme
-                          .bodyText2
-                          .color)),
-            ]));
-  }
+  
 
   Widget _buildAppBar() {
     return AppBar(
@@ -216,65 +186,53 @@ class MyHomePageState extends DynamicState<MyHomePage> {
     );
   }
 
-  _buildBody(Widget newSubjectFloatingButton, Widget emptyListWidget,
+  _buildBody(Widget newSubjectFloatingButton,
       Widget appbarWidget) {
     var mainCounter = _buildMainCounter();
-    return Scaffold(
-        appBar: appbarWidget,
-        floatingActionButton: newSubjectFloatingButton,
-        body: Center(
-            child: SafeArea(
-              child: Padding(
-                padding: EdgeInsets.all(0),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    mainCounter,
-                    CounterManager.countersInit
-                        ? CounterManager.counters.length > 1
-                        ? Expanded(
-                        child: Padding(
-                            padding: EdgeInsets.all(20),
-                            child: ListView.builder(
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: CounterManager.counters.length,
-                                itemBuilder: (context, i) {
-                                  if (i != 0) {
-                                    return SubjectTimer(
-                                        CounterManager.counters[i].subject);
-                                  } else
-                                    return Container(); // we don't need to have "firstSubject" timer
-                                  // because we've got it in the center of the screen
-                                })))
-                        : emptyListWidget
-                        : CircularProgressIndicator()
-                  ],
-                ),
-              ),
-            )));
-  }
-
-  _buildGestureDetector(body) {
-    return GestureDetector(
-        onPanUpdate: (a) {
-          if (a.delta.dy < -7) {
-            List<Subject> subjectsAlreadyOnScreen = List();
-            for (var counter in CounterManager.counters) {
-              subjectsAlreadyOnScreen.add(counter.subject);
-            }
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        AddSubjectWidget(subjectsAlreadyOnScreen)));
-          }
-        },
-        child: body);
-  }
-
-  _buildMainCounter() {
-    return MainCounterView();
-  }
+    var smallCounters = _buildSmallCounters();
+        return Scaffold(
+            appBar: appbarWidget,
+            floatingActionButton: newSubjectFloatingButton,
+            body: Center(
+                child: SafeArea(
+                  child: Padding(
+                    padding: EdgeInsets.all(0),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        mainCounter,
+                        smallCounters,
+                      ],
+                    ),
+                  ),
+                )));
+      }
+    
+      _buildGestureDetector(body) {
+        return GestureDetector(
+            onPanUpdate: (a) {
+              if (a.delta.dy < -7) {
+                List<Subject> subjectsAlreadyOnScreen = List();
+                for (var counter in CounterManager.counters) {
+                  subjectsAlreadyOnScreen.add(counter.subject);
+                }
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>
+                            AddSubjectWidget(subjectsAlreadyOnScreen)));
+              }
+            },
+            child: body);
+      }
+    
+      _buildMainCounter() {
+        return MainCounterView();
+      }
+    
+      _buildSmallCounters() {
+        return SmallCountersView();
+      }
 }
 
 
@@ -329,19 +287,19 @@ class DefaultInterstitialListener extends AdListener {
           (Ad ad) => print('Left application.');
 }
 
-class SubjectTimer extends StatefulWidget {
+class SubjectTimerView extends StatefulWidget {
   final Subject _subject;
 
-  SubjectTimer(this._subject, {Key key}) : super(key: key);
+  SubjectTimerView(this._subject, {Key key}) : super(key: key);
 
   @override
-  _SubjectTimerState createState() => _SubjectTimerState(this._subject);
+  _SubjectTimerViewState createState() => _SubjectTimerViewState(this._subject);
 }
 
-class _SubjectTimerState extends State<SubjectTimer> {
+class _SubjectTimerViewState extends State<SubjectTimerView> {
   Subject _subject;
 
-  _SubjectTimerState(this._subject);
+  _SubjectTimerViewState(this._subject);
 
   @override
   Widget build(BuildContext context) {
@@ -377,17 +335,4 @@ class ZnoCounter {
   }
 }
 
-enum Subject {
-  english,
-  ukrainianLanguageLiterature,
-  math,
-  biology,
-  history,
-  physics,
-  germanLanguage,
-  spanishLanguage,
-  geography,
-  chemistry,
-  frenchLanguage,
-  firstOne
-}
+

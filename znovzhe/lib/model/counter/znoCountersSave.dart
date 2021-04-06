@@ -1,4 +1,5 @@
 import 'package:ZnoNeZaBarom/model/counter/counters.dart';
+import 'package:ZnoNeZaBarom/model/subjects/subjects.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../view/main/main.dart';

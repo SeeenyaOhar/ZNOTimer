@@ -1,6 +1,5 @@
 # ZNO NE ZA HORAMY
 
-A new Flutter project.
 ## English US
 ### Getting Started
 

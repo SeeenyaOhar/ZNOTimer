@@ -1,7 +1,7 @@
-import 'package:ZnoNeZaBarom/model/subjects/subjectManager.dart';
-import 'package:ZnoNeZaBarom/model/subjects/subjects.dart';
-import 'package:ZnoNeZaBarom/viewmodel/subjectIcons.dart';
-import 'package:ZnoNeZaBarom/viewmodel/theme.dart';
+import 'package:ZnoNeZaHoramy/model/subjects/subjectManager.dart';
+import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
+import 'package:ZnoNeZaHoramy/viewmodel/subjectIcons.dart';
+import 'package:ZnoNeZaHoramy/viewmodel/theme.dart';
 import 'package:flutter/material.dart';
 
 class AddSubjectsList extends StatefulWidget {

@@ -1,8 +1,8 @@
-import 'package:ZnoNeZaBarom/model/subjects/subjectManager.dart';
-import 'package:ZnoNeZaBarom/model/subjects/subjects.dart';
-import 'package:ZnoNeZaBarom/viewmodel/theme.dart';
-import 'package:ZnoNeZaBarom/viewmodel/theme.dart';
-import 'package:ZnoNeZaBarom/model/counter/znoCountersSave.dart';
+import 'package:ZnoNeZaHoramy/model/subjects/subjectManager.dart';
+import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
+import 'package:ZnoNeZaHoramy/viewmodel/theme.dart';
+import 'package:ZnoNeZaHoramy/viewmodel/theme.dart';
+import 'package:ZnoNeZaHoramy/model/counter/znoCountersSave.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/cupertino.dart';
 import '../../view/addSubject/addSubjectCounter.dart';

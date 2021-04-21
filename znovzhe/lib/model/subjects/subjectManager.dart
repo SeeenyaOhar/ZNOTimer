@@ -1,9 +1,9 @@
 
-import 'package:ZnoNeZaBarom/model/counter/counters.dart';
-import 'package:ZnoNeZaBarom/model/counter/znoCountersSave.dart';
-import 'package:ZnoNeZaBarom/model/subjects/subjects.dart';
-import 'package:ZnoNeZaBarom/view/main/main.dart';
-import 'package:ZnoNeZaBarom/viewmodel/subjectIcons.dart';
+import 'package:ZnoNeZaHoramy/model/counter/counters.dart';
+import 'package:ZnoNeZaHoramy/model/counter/znoCountersSave.dart';
+import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
+import 'package:ZnoNeZaHoramy/view/main/main.dart';
+import 'package:ZnoNeZaHoramy/viewmodel/subjectIcons.dart';
 import 'package:flutter/material.dart';
 
 class SubjectManager {
@@ -17,6 +17,7 @@ class SubjectManager {
       var znoTime = SubjectValues.getZNODateTime(context, subject);
       var newCounter = ZnoCounter(subject, znoTime);
       CounterManager.counters.add(newCounter);
+      subjectsAvailable[subject] = true;
       ZnoCountersSave.save();
     }
   }
@@ -26,7 +27,10 @@ class SubjectManager {
         CounterManager.counters.where((x) => x.subject == subject).toList();
     if (v.length != 0) {
       CounterManager.remove(v[0]);
+      subjectsAvailable[subject] = false;
       ZnoCountersSave.save();
     }
   }
+
+
 }

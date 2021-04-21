@@ -1,17 +1,18 @@
-import 'package:ZnoNeZaBarom/model/subjects/subjects.dart';
-import 'package:ZnoNeZaBarom/view/settings/settings.dart';
-import 'package:ZnoNeZaBarom/viewmodel/theme.dart';
+import 'package:ZnoNeZaHoramy/model/settings/settingsManager.dart';
+import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
+import 'package:ZnoNeZaHoramy/view/settings/settings.dart';
+import 'package:ZnoNeZaHoramy/viewmodel/theme.dart';
 import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:rive/rive.dart';
-import 'package:ZnoNeZaBarom/view/addSubject/addSubjectCounter.dart';
-import 'package:ZnoNeZaBarom/model/counter/ads.dart';
-import 'package:ZnoNeZaBarom/viewmodel/languageManager.dart';
+import 'package:ZnoNeZaHoramy/view/addSubject/addSubjectCounter.dart';
+import 'package:ZnoNeZaHoramy/model/ads/ads.dart';
+import 'package:ZnoNeZaHoramy/viewmodel/languageManager.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ZnoNeZaBarom/model/counter/znoCountersSave.dart';
+import 'package:ZnoNeZaHoramy/model/counter/znoCountersSave.dart';
 import 'dart:io';
 import 'dart:math';
 import '../../model/counter/counters.dart';
@@ -30,42 +31,41 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return DynamicTheme(
-      data: (brightness) =>
-      WidgetsBinding.instance.window.platformBrightness == Brightness.dark ? ThemeData(
-          primarySwatch: Colors.lightGreen,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          backgroundColor: ThemeSelector.BACKGROUND_DARK,
-          scaffoldBackgroundColor: ThemeSelector.BACKGROUND_DARK,
-          textTheme: TextTheme(
-              bodyText2: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
-              bodyText1: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
-              headline1: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
-              headline3: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
-              headline2: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
-              headline4: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
-              headline6: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
-              headline5: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK))
-      ) : ThemeData(
-        primarySwatch: Colors.lightGreen,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        backgroundColor: ThemeSelector.BACKGROUND_WHITE,
-        scaffoldBackgroundColor: ThemeSelector.BACKGROUND_WHITE,
-        textTheme: TextTheme(
-            bodyText2: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
-            bodyText1: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
-            headline1: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
-            headline3: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
-            headline2: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
-            headline4: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
-            headline6: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
-            headline5: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE)),
-      ),
+      data: (brightness) => WidgetsBinding.instance.window.platformBrightness ==
+              Brightness.dark
+          ? ThemeData(
+              primarySwatch: Colors.lightGreen,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+              backgroundColor: ThemeSelector.BACKGROUND_DARK,
+              scaffoldBackgroundColor: ThemeSelector.BACKGROUND_DARK,
+              textTheme: TextTheme(
+                  bodyText2: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
+                  bodyText1: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
+                  headline1: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
+                  headline3: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
+                  headline2: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
+                  headline4: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
+                  headline6: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK),
+                  headline5: TextStyle(color: ThemeSelector.TEXT_COLOR_DARK)))
+          : ThemeData(
+              primarySwatch: Colors.lightGreen,
+              visualDensity: VisualDensity.adaptivePlatformDensity,
+              backgroundColor: ThemeSelector.BACKGROUND_WHITE,
+              scaffoldBackgroundColor: ThemeSelector.BACKGROUND_WHITE,
+              textTheme: TextTheme(
+                  bodyText2: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
+                  bodyText1: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
+                  headline1: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
+                  headline3: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
+                  headline2: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
+                  headline4: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
+                  headline6: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE),
+                  headline5: TextStyle(color: ThemeSelector.TEXT_COLOR_WHITE)),
+            ),
       themedWidgetBuilder: (context, theme) {
         return MaterialApp(
           localizationsDelegates: [
@@ -73,7 +73,6 @@ class MyApp extends StatelessWidget {
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
-
           ],
           supportedLocales: [
             const Locale('en', 'US'),
@@ -115,12 +114,16 @@ class MyHomePageState extends DynamicState<MyHomePage> {
 
   @override
   void initState() {
+    SettingsManager.initializeSettings(context);
     CounterManager.init();
     CounterManager.start(this, context);
     CounterManager.lateInit(context, this);
+
+    // ADS
+    handler = DefaultInterstitialHandler();
+    handler.initAd();
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -132,159 +135,103 @@ class MyHomePageState extends DynamicState<MyHomePage> {
     // than having to individually change instances of widgets.
     var newSubjectFloatingButton = _buildAddNewSubjectFloatingButton();
     var appbarWidget = _buildAppBar();
-    var body =
-    _buildBody(newSubjectFloatingButton, appbarWidget);
+    var body = _buildBody(newSubjectFloatingButton, appbarWidget);
     var gestureDetector = _buildGestureDetector(body);
     var finalPage = gestureDetector;
     return finalPage;
     // floatingActionButton: newSubjectFloatingButton);
   }
+
   Widget _buildAddNewSubjectFloatingButton() {
     List<Subject> subjectsAlreadyOnScreen = [];
     for (var counter in CounterManager.counters) {
       subjectsAlreadyOnScreen.add(counter.subject);
     }
     return FloatingActionButton(
-      onPressed: () =>
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) =>
-                      AddSubjectWidget(subjectsAlreadyOnScreen))),
+      onPressed: () => Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => AddSubjectWidget())),
       tooltip: 'Increment',
       child: Icon(Icons.add),
     );
   }
 
-  
-
   Widget _buildAppBar() {
     return AppBar(
         title: Center(
-            child: Text(LocalizationTool
-                .of(context)
-                .appName
-                .toUpperCase())),
-        titleTextStyle: Theme
-            .of(context)
-            .textTheme
-            .headline6,
-        backgroundColor: Theme
-            .of(context)
-            .accentColor,
+            child: Text(LocalizationTool.of(context).appName.toUpperCase())),
+        titleTextStyle: Theme.of(context).textTheme.headline6,
+        backgroundColor: Theme.of(context).accentColor,
         backwardsCompatibility: false,
-        systemOverlayStyle: SystemUiOverlayStyle(
-            statusBarColor: Theme
-                .of(context)
-                .accentColor),
+        systemOverlayStyle:
+            SystemUiOverlayStyle(statusBarColor: Theme.of(context).accentColor),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.settings), onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => SettingsPage(),));
-          },),
-        ]
-    );
+          IconButton(
+            icon: Icon(Icons.settings,
+                color: Theme.of(context).textTheme.headline1.color),
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SettingsPage(),
+                  ));
+            },
+          ),
+        ]);
   }
 
-  _buildBody(Widget newSubjectFloatingButton,
-      Widget appbarWidget) {
+  _buildBody(Widget newSubjectFloatingButton, Widget appbarWidget) {
     var mainCounter = _buildMainCounter();
     var smallCounters = _buildSmallCounters();
-        return Scaffold(
-            appBar: appbarWidget,
-            floatingActionButton: newSubjectFloatingButton,
-            body: Center(
-                child: SafeArea(
-                  child: Padding(
-                    padding: EdgeInsets.all(0),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        mainCounter,
-                        smallCounters,
-                      ],
-                    ),
-                  ),
-                )));
-      }
-    
-      _buildGestureDetector(body) {
-        return GestureDetector(
-            onPanUpdate: (a) {
-              if (a.delta.dy < -7) {
-                List<Subject> subjectsAlreadyOnScreen = List();
-                for (var counter in CounterManager.counters) {
-                  subjectsAlreadyOnScreen.add(counter.subject);
-                }
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            AddSubjectWidget(subjectsAlreadyOnScreen)));
-              }
-            },
-            child: body);
-      }
-    
-      _buildMainCounter() {
-        return MainCounterView();
-      }
-    
-      _buildSmallCounters() {
-        return SmallCountersView();
-      }
-}
-
-
-class DefaultInterstitialHandler {
-  InterstitialAd interstitial;
-
-  void initAd() {
-    var listener = (Ad ad) {
-      print("Ad loaded!");
-      interstitial.show();
-    };
-    interstitial =
-        AdmobHelper.createInterstitial(DefaultInterstitialListener(listener));
+    return Scaffold(
+        appBar: appbarWidget,
+        floatingActionButton: newSubjectFloatingButton,
+        body: Center(
+            child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.all(0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                mainCounter,
+                smallCounters,
+              ],
+            ),
+          ),
+        )));
   }
 
-  void load() {
-    interstitial.load();
+  _buildGestureDetector(body) {
+    return GestureDetector(
+        onTap: () => showAd(),
+        onPanUpdate: (a) {
+          if (a.delta.dy < -7) {
+            List<Subject> subjectsAlreadyOnScreen = [];
+            for (var counter in CounterManager.counters) {
+              subjectsAlreadyOnScreen.add(counter.subject);
+            }
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        AddSubjectWidget()));
+          }
+        },
+        child: body);
   }
-}
 
-class DefaultInterstitialListener extends AdListener {
-  Function(Ad ad) onAdLoadedFun;
-  static final Function(Ad ad) onAdLoadedDefault =
-      (Ad ad) => print("Ad loaded");
-
-  DefaultInterstitialListener(Function(Ad ad) onAdLoaded) {
-    onAdLoadedFun = onAdLoaded;
+  _buildMainCounter() {
+    return MainCounterView();
   }
 
-  @override
-  void Function(Ad ad) get onAdClosed =>
-          (Ad ad) {
-        ad.dispose();
-        print("Ad closed");
-      };
+  _buildSmallCounters() {
+    return SmallCountersView();
+  }
 
-  @override
-  void Function(Ad ad, LoadAdError error) get onAdFailedToLoad =>
-          (Ad ad, LoadAdError error) {
-        ad.dispose();
-        print('Ad failed to load: $error');
-      };
-
-  @override
-  void Function(Ad ad) get onAdLoaded => (Ad ad) => onAdLoadedFun(ad);
-
-  @override
-  void Function(Ad ad) get onAdOpened => (Ad ad) => print('Ad opened.');
-
-  @override
-  void Function(Ad ad) get onApplicationExit =>
-          (Ad ad) => print('Left application.');
+  showAd() {
+    handler.load();
+  }
 }
 
 class SubjectTimerView extends StatefulWidget {
@@ -308,17 +255,11 @@ class _SubjectTimerViewState extends State<SubjectTimerView> {
       ListTile(
           leading: SubjectValues.getIcon(context, _subject),
           title: Text(SubjectValues.getSubjectName(context, _subject),
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .bodyText2),
+              style: Theme.of(context).textTheme.bodyText2),
           trailing: Text(
               DurationTimeConverter.shortTimeString(
                   CounterManager.timeLeft[_subject], context),
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .bodyText2))
+              style: Theme.of(context).textTheme.bodyText2))
     ]);
   }
 }
@@ -334,5 +275,3 @@ class ZnoCounter {
     return znoTime.difference(timeNow);
   }
 }
-
-

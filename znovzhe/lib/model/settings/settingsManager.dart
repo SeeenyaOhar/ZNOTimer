@@ -1,13 +1,13 @@
-import 'package:ZnoNeZaBarom/model/settings/general/generalModel.dart';
+import 'package:ZnoNeZaHoramy/model/settings/general/generalModel.dart';
 import 'package:flutter/cupertino.dart';
 
 class SettingsManager{
   static initializeSettings(BuildContext context){
-    settings = [DarkModeSetting()]; // add the settings classes in here
+    settings = <Setting> [DarkModeSetting()]; // add the settings classes in here
     settings.forEach((el) { el.initialize(context); });
   }
-  static List<Setting> getSetting(Type typeofsetting){
-    return settings.where((s)=> s.runtimeType == typeofsetting);
+  static List<Setting> getSetting<T>(){
+    return settings.where((s)=> s.runtimeType == T).toList();
   }
   static List<Setting> settings = [];
 }
@@ -15,7 +15,7 @@ class SettingsManager{
 class Setting<T>{
   T _settingValue;
   void changeSetting(SettingValue<T> val, BuildContext context) async{}
-  void getSettingValue(BuildContext context) async {}
+  T getSettingValue(BuildContext context) {}
   void initialize(BuildContext context) async {}
 }
 

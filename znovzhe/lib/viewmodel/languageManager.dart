@@ -1,6 +1,6 @@
 import "package:flutter/foundation.dart";
 import 'package:flutter/material.dart';
-import 'package:ZnoNeZaBarom/view/main/main.dart';
+import 'package:ZnoNeZaHoramy/view/main/main.dart';
 
 class LocalizationTool {
   LocalizationTool(this.locale);
@@ -33,6 +33,18 @@ class LocalizationTool {
   String get appName => getValue("appName");
 
   String get darkModeSetting => getValue("darkMode");
+
+  String get settings => getValue("settings");
+
+  String get general => getValue("general");
+
+  String get darkModeSystem => getValue("darkModeSystem");
+
+  String get darkModeDark => getValue("darkModeDark");
+
+  String get darkModeLight => getValue("darkModeLight");
+
+  String get addSubjectAppBarTitle => getValue("addSubjectAppBarTitle");
 
   String getValue(String key) {
     return _localizedValues[locale.languageCode][key];
@@ -75,7 +87,13 @@ class LocalizationTool {
       "chemistry" : "Хімія",
       "frenchLanguage" : "Французька мова",
       "emptyListRecommendation" : "Ви можете додати предмети знизу.",
-      "darkMode" : "Темний режим"
+      "darkMode" : "Темний режим",
+      "settings" : "Налаштування",
+      "general" : "Основні",
+      "darkModeSystem" : "Системний",
+      "darkModeDark" : "Темний",
+  "darkModeLight" : "Світлий",
+  "addSubjectAppBarTitle" : "Додати предмет",
     },
     'uk':{
 
@@ -100,7 +118,13 @@ class LocalizationTool {
   "chemistry" : "Хімія",
   "frenchLanguage" : "Французька мова",
   "emptyListRecommendation" : "Ви можете додати предмети внизу.",
-  "darkMode" : "Темний режим"
+  "darkMode" : "Темний режим",
+      "settings" : "Налаштування",
+      "general" : "Основні",
+      "darkModeSystem" : "Системний",
+      "darkModeDark" : "Темний",
+      "darkModeLight" : "Світлий",
+      "addSubjectAppBarTitle" : "Додати предмет"
     },
     'en': {
       "appName" : "ZNO ne za goramy",
@@ -124,7 +148,13 @@ class LocalizationTool {
       "chemistry" : "Chemistry",
       "frenchLanguage" : "The French Language",
       "emptyListRecommendation" : "You can add subjects down below.",
-      "darkMode" : "Dark mode"
+      "darkMode" : "Dark mode",
+      "settings" : "Settings",
+      "darkModeSystem" : "System",
+      "darkModeDark" : "Dark",
+      "darkModeLight" : "Light",
+  "general" : "General",
+  "addSubjectAppBarTitle" : "Add a subject"
     },
     'ru': {
       "appName" : "ЗНО не за горами",
@@ -147,7 +177,13 @@ class LocalizationTool {
       "chemistry" : "Химия",
       "frenchLanguage" : "Французкий язык",
       "emptyListRecommendation" : "Вы можете добавить предметы внизу.",
-      "darkMode" : "Черный режим"
+      "darkMode" : "Черный режим",
+      "settings" : "Настройки",
+      "general" : "Основні",
+      "darkModeSystem" : "Системный",
+      "darkModeDark" : "Тёмный",
+      "darkModeLight" : "Светлый",
+      "addSubjectAppBarTitle" : "Добавить предмет"
     },
   };
 

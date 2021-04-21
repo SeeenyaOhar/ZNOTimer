@@ -1,3 +1,6 @@
+import 'package:ZnoNeZaHoramy/model/settings/general/generalModel.dart';
+import 'package:ZnoNeZaHoramy/model/settings/settingsManager.dart';
+import 'package:ZnoNeZaHoramy/view/settings/general/generalSettings.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -9,11 +12,18 @@ class ThemeSelector {
   static final Color BACKGROUND_WHITE = Colors.white;
   static final Color TEXT_COLOR_WHITE = Colors.black;
 
-  static bool isDark = false;
+  static DarkMode darkMode = DarkMode.system;
+  static bool isDark;
   ThemeData select(BuildContext context) {
     var counter = DefaultZNOCounter();
     var defaultZnoTime = counter.getZNOTime();
-
+    darkMode = SettingsManager.getSetting<DarkModeSetting>()[0].getSettingValue(context) as DarkMode;
+    if (darkMode == DarkMode.system){
+       isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    }
+    else{
+      isDark = darkMode == DarkMode.dark;
+    }
     ThemeData data;
     Color backgroundColor =
         isDark ? Color.fromARGB(255, 40, 40, 40) : Colors.white;
@@ -68,6 +78,14 @@ class ThemeSelector {
           textTheme: textTheme);
       return data;
     }
+  }
+
+  static Color getForegroundColor() {
+    if (isDark){
+      return TEXT_COLOR_DARK;
+
+    }
+    else return TEXT_COLOR_WHITE;
   }
 }
 class DynamicState<T extends StatefulWidget> extends State<T>{

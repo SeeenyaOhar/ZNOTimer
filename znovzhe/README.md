@@ -8,6 +8,8 @@ This project is a timer for the high school graduates in Ukraine. It counts the 
 ### Functionality:
 1. Counts the time to the EIE.
 2. Counts the time for each subject(because the tests for each subject are conducted on seperate days)
+3. Animations
+4. A bunch of minor stuff.
 
 ### Advantages:
 1. User-friendly UI

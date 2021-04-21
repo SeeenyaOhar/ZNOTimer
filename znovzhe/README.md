@@ -1,5 +1,6 @@
-# ZNO NE ZA HORAMY
 
+# ZNO NE ZA HORAMY
+![feature-graphics](https://user-images.githubusercontent.com/46402350/115594583-90c1ee00-a2de-11eb-99a8-52186d3f5a6a.png)
 ## English US
 ### Getting Started
 
@@ -17,3 +18,6 @@ This project is a timer for the high school graduates in Ukraine. It counts the 
 3. Interactive theme(the accent color depends on the time left to EIE)
 4. Pretty fast(uses native code - flutter sdk)
 5. Dark mode switch.
+
+![Phone-main](https://user-images.githubusercontent.com/46402350/115594505-7e47b480-a2de-11eb-8b2b-956a45443ab8.png)
+

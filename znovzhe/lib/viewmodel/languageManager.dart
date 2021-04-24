@@ -46,6 +46,8 @@ class LocalizationTool {
 
   String get addSubjectAppBarTitle => getValue("addSubjectAppBarTitle");
 
+  String get lessThanDay => getValue("lessThanADay");
+
   String getValue(String key) {
     return _localizedValues[locale.languageCode][key];
   }
@@ -94,6 +96,7 @@ class LocalizationTool {
       "darkModeDark" : "Темний",
   "darkModeLight" : "Світлий",
   "addSubjectAppBarTitle" : "Додати предмет",
+  "lessThanADay" : "Менше ніж день"
     },
     'uk':{
 
@@ -124,7 +127,8 @@ class LocalizationTool {
       "darkModeSystem" : "Системний",
       "darkModeDark" : "Темний",
       "darkModeLight" : "Світлий",
-      "addSubjectAppBarTitle" : "Додати предмет"
+      "addSubjectAppBarTitle" : "Додати предмет",
+      "lessThanADay" : "Менше ніж день"
     },
     'en': {
       "appName" : "ZNO ne za goramy",
@@ -154,7 +158,8 @@ class LocalizationTool {
       "darkModeDark" : "Dark",
       "darkModeLight" : "Light",
   "general" : "General",
-  "addSubjectAppBarTitle" : "Add a subject"
+  "addSubjectAppBarTitle" : "Add a subject",
+  "lessThanADay" : "Less than a day"
     },
     'ru': {
       "appName" : "ЗНО не за горами",
@@ -183,7 +188,8 @@ class LocalizationTool {
       "darkModeSystem" : "Системный",
       "darkModeDark" : "Тёмный",
       "darkModeLight" : "Светлый",
-      "addSubjectAppBarTitle" : "Добавить предмет"
+      "addSubjectAppBarTitle" : "Добавить предмет",
+      "lessThanADay" : "Менше дня"
     },
   };
 

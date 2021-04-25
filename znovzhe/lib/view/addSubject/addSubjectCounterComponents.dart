@@ -77,8 +77,8 @@ class _AddSubjectsListState extends State<AddSubjectsList> {
   }
 
   removeFromMain(Subject subject) {
-    SubjectManager.remove(context, subject);
     SubjectManager.subjectsAvailable[subject] = false;
+    SubjectManager.remove(context, subject);
     setState(() {});
   }
   

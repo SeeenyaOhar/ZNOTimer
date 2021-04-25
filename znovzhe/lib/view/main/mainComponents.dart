@@ -113,6 +113,7 @@ class SmallCountersView extends StatefulWidget {
 }
 
 class _SmallCountersViewState extends State<SmallCountersView> {
+  
   @override
   Widget build(BuildContext context) {
     var emptyListWidget = _buildEmptySubjectList();
@@ -166,8 +167,7 @@ class _SmallCountersViewState extends State<SmallCountersView> {
                                 itemCount: CounterManager.counters.length,
                                 itemBuilder: (context, i) {
                                   if (i != 0) {
-                                    return SubjectTimerView(
-                                        CounterManager.counters[i].subject);
+                                    return SubjectTimerView(CounterManager.counters[i],key: GlobalKey());
                                   } else
                                     return Container(); // we don't need to have "firstSubject" timer
                                   // because we've got it in the center of the screen

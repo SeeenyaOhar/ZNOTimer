@@ -235,30 +235,33 @@ class MyHomePageState extends DynamicState<MyHomePage> {
 }
 
 class SubjectTimerView extends StatefulWidget {
-  final Subject _subject;
+  ZnoCounter _subject;
 
   SubjectTimerView(this._subject, {Key key}) : super(key: key);
 
   @override
-  _SubjectTimerViewState createState() => _SubjectTimerViewState(this._subject);
+  _SubjectTimerViewState createState() => _SubjectTimerViewState(_subject);
 }
 
 class _SubjectTimerViewState extends State<SubjectTimerView> {
-  Subject _subject;
+  ZnoCounter _subject;
 
-  _SubjectTimerViewState(this._subject);
+  _SubjectTimerViewState(ZnoCounter subject){
+    this._subject = subject;
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
       Divider(),
       ListTile(
-          leading: SubjectValues.getIcon(context, _subject),
-          title: Text(SubjectValues.getSubjectName(context, _subject),
+
+          leading: SubjectValues.getIcon(context, _subject.subject),
+          title: Text(SubjectValues.getSubjectName(context, _subject.subject),
               style: Theme.of(context).textTheme.bodyText2),
           trailing: Text(
               DurationTimeConverter.shortTimeString(
-                  CounterManager.timeLeft[_subject], context),
+                  CounterManager.timeLeft[_subject.subject], context),
               style: Theme.of(context).textTheme.bodyText2))
     ]);
   }

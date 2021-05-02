@@ -12,11 +12,11 @@ class SubjectManager {
       Map(); // bool means if this kind of counter is already on the main screen
 
   static add(BuildContext context, Subject subject) {
-    var v = CounterManager.counters.where((x) => x.subject == subject);
+    var v = SortCounterManager().counters.where((x) => x.subject == subject);
     if (v.length == 0) {
       var znoTime = SubjectValues.getZNODateTime(context, subject);
       var newCounter = ZnoCounter(subject, znoTime);
-      CounterManager.counters.add(newCounter);
+      SortCounterManager().add(newCounter);
       subjectsAvailable[subject] = true;
       ZnoCountersSave.save();
     }
@@ -24,9 +24,9 @@ class SubjectManager {
 
   static remove(BuildContext context, Subject subject) {
     var v =
-        CounterManager.counters.where((x) => x.subject == subject).toList();
+        SortCounterManager().counters.where((x) => x.subject == subject).toList();
     if (v.length != 0) {
-      CounterManager.remove(v[0]);
+      SortCounterManager().remove(v[0]);
       subjectsAvailable[subject] = false;
       ZnoCountersSave.save();
     }

@@ -78,7 +78,7 @@ class _MainCounterViewState extends State<MainCounterView> {
   _buildCounterText() {
     return Text(
         DurationTimeConverter.shortTimeString(
-            CounterManager.timeLeft[Subject.firstOne], context),
+            SortCounterManager().timeLeft[Subject.firstOne], context),
         style: Theme
             .of(context)
             .textTheme
@@ -119,8 +119,8 @@ class _SmallCountersViewState extends State<SmallCountersView> {
     var emptyListWidget = _buildEmptySubjectList();
     var smallCounters = _buildSmallCounters();
     var circularIndicator = _buildCircularProgressIndicator();
-    return CounterManager.countersInit
-                        ? CounterManager.counters.length > 1
+    return SortCounterManager().areCountersInit
+                        ? SortCounterManager().counters.length > 1
                         ? smallCounters
                         : emptyListWidget
                         : circularIndicator;
@@ -164,10 +164,10 @@ class _SmallCountersViewState extends State<SmallCountersView> {
                             padding: EdgeInsets.all(20),
                             child: ListView.builder(
                                 physics: NeverScrollableScrollPhysics(),
-                                itemCount: CounterManager.counters.length,
+                                itemCount: SortCounterManager().counters.length,
                                 itemBuilder: (context, i) {
                                   if (i != 0) {
-                                    return SubjectTimerView(CounterManager.counters[i],key: GlobalKey());
+                                    return SubjectTimerView(SortCounterManager().counters[i],key: GlobalKey());
                                   } else
                                     return Container(); // we don't need to have "firstSubject" timer
                                   // because we've got it in the center of the screen

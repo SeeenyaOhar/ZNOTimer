@@ -115,9 +115,9 @@ class MyHomePageState extends DynamicState<MyHomePage> {
   @override
   void initState() {
     SettingsManager.initializeSettings(context);
-    CounterManager.init();
-    CounterManager.start(this, context);
-    CounterManager.lateInit(context, this);
+    SortCounterManager().init();
+    SortCounterManager().start(this, context);
+    SortCounterManager().lateInit(context, this);
 
     // ADS
     handler = DefaultInterstitialHandler();
@@ -144,7 +144,7 @@ class MyHomePageState extends DynamicState<MyHomePage> {
 
   Widget _buildAddNewSubjectFloatingButton() {
     List<Subject> subjectsAlreadyOnScreen = [];
-    for (var counter in CounterManager.counters) {
+    for (var counter in SortCounterManager().counters) {
       subjectsAlreadyOnScreen.add(counter.subject);
     }
     return FloatingActionButton(
@@ -208,7 +208,7 @@ class MyHomePageState extends DynamicState<MyHomePage> {
         onPanUpdate: (a) {
           if (a.delta.dy < -7) {
             List<Subject> subjectsAlreadyOnScreen = [];
-            for (var counter in CounterManager.counters) {
+            for (var counter in SortCounterManager().counters) {
               subjectsAlreadyOnScreen.add(counter.subject);
             }
             Navigator.push(
@@ -261,7 +261,7 @@ class _SubjectTimerViewState extends State<SubjectTimerView> {
               style: Theme.of(context).textTheme.bodyText2),
           trailing: Text(
               DurationTimeConverter.shortTimeString(
-                  CounterManager.timeLeft[_subject.subject], context),
+                  SortCounterManager().timeLeft[_subject.subject], context),
               style: Theme.of(context).textTheme.bodyText2))
     ]);
   }

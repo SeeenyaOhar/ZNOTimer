@@ -7,7 +7,7 @@ import '../../view/main/main.dart';
 class ZnoCountersSave {
   static final String saveKey = "subs";
   static save() async {
-    var state = CounterManager.counters.toList();
+    var state = SortCounterManager().counters.toList();
     state.remove(state
         .where((x) => x.subject == Subject.firstOne)
         .toList()[0]); // removing the first one

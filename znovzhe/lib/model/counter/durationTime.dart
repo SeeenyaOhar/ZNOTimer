@@ -7,8 +7,12 @@ class DurationTimeConverter {
   static String shortTimeString(Duration time, BuildContext context) {
     var buffer = new StringBuffer();
     var monthsLeft = time.inDays / 30;
-    var days = ((monthsLeft - monthsLeft.floor()) * 30).floor();
+    var days = ((monthsLeft - monthsLeft.floor()) * 30).round();
     var months = monthsLeft.floor();
+    if (monthsLeft < 0){
+      buffer.write(LocalizationTool.of(context).counterGone);
+      return buffer.toString().toUpperCase();
+    }
     bool monthsWritten = true;
     if (monthsLeft.floor() != 0) {
       var monthsString = "";
@@ -36,13 +40,13 @@ class DurationTimeConverter {
     else{
       monthsWritten = false;
     }
-    if (days.floor() != 0) {
+    if (days.round() != 0) {
       var daysString = "";
-      var lastNumberDay = (days % 10).floor();
+      var lastNumberDay = (days % 10).round();
+      
       if (days > 10 && days < 20) {
         daysString = LocalizationTool.of(context).days5;
       } else if (days < 10){
-        
         if (days == 1) {
           daysString = LocalizationTool.of(context).days1;
         } else if (days < 5) {
@@ -52,7 +56,6 @@ class DurationTimeConverter {
         }
       }
       else{
-        
         if (lastNumberDay == 1) {
           daysString = LocalizationTool.of(context).days1;
         } else if (lastNumberDay < 5) {
@@ -62,9 +65,9 @@ class DurationTimeConverter {
         }
       }
       if (monthsWritten) {
-        buffer.write(",\n${days.floor()} $daysString");
+        buffer.write(",\n${days.round()} $daysString");
       } else {
-        buffer.write("${days.floor()} $daysString");
+        buffer.write("${days.round()} $daysString");
       }
     }
     else{

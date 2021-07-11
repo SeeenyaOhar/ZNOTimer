@@ -1,9 +1,9 @@
+import 'package:ZnoNeZaHoramy/model/counter/counters.dart';
 import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'languageManager.dart';
-import '../view/main/main.dart';
 
 class SubjectValues {
   static SvgPicture getIcon(
@@ -107,14 +107,8 @@ class SubjectValues {
   }
 
   static DateTime getZNODateTime(BuildContext context, Subject _subject) {
-    int znoYear = 0;
-    var curDate = DateTime.now();
     DateTime resultDate;
-    if (curDate.month > 6) {
-      znoYear = curDate.year + 1;
-    } else {
-      znoYear = curDate.year;
-    }
+    var znoYear = SimpleCounterManager().znoYear;
     switch (_subject) {
       case Subject.english:
         resultDate = DateTime(znoYear, 5, 25);
@@ -160,7 +154,10 @@ class SubjectValues {
 class DefaultZNOCounter {
   // This is a default znoCounter(counts up to the 20th of may)
   Duration getZNOTime() {
-    var znoTime = DateTime(2021, 5, 21, 9);
+    var znoYear = 0;
+
+    znoYear = SortCounterManager().znoYear;
+    var znoTime = DateTime(znoYear, 5, 21, 9);
     var timeNow = DateTime.now();
     return znoTime.difference(timeNow);
   }

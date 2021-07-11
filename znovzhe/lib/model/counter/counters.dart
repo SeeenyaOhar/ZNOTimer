@@ -38,13 +38,16 @@ class SimpleCounterManager extends CounterManager {
   SimpleCounterManager._internal() : super._internal();
 
   ThemeSelector _themeSelector;
+  int znoYear = 0; // is changed every app reload depending if the zno has been passed 
   
   
 
   @override
   void init() {
     _themeSelector = ThemeSelector();
-    var firstSubjectTime = DateTime(2021, 5, 21, 9);
+    znoYear = getZnoYear();
+    print("ZNOYear for the first ZNOCounter is : " + znoYear.toString());
+    var firstSubjectTime = DateTime(znoYear, 5, 21, 9);
     add(ZnoCounter(Subject.firstOne, firstSubjectTime));
     timeLeft[Subject.firstOne] = counters[0].znoTimeDifference();
   }
@@ -94,18 +97,23 @@ class SimpleCounterManager extends CounterManager {
 }
 
 class SortCounterManager extends CounterManager{
+
   static final _manager = SortCounterManager._internal();
   factory SortCounterManager(){
     return _manager;
   }
   SortCounterManager._internal() : super._internal();
-
+  int znoYear;
 
    ThemeSelector _themeSelector;
   @override
   void init() {
     _themeSelector = ThemeSelector();
-    var firstSubjectTime = DateTime(2021, 5, 21, 9);
+
+    znoYear = getZnoYear(); 
+    print("ZNOYear for the first ZNOCounter is : " + znoYear.toString());
+    var firstSubjectTime = DateTime(znoYear, 5, 21, 9);
+    
     add(ZnoCounter(Subject.firstOne, firstSubjectTime));
     timeLeft[Subject.firstOne] = counters[0].znoTimeDifference();
   }
@@ -146,7 +154,7 @@ class SortCounterManager extends CounterManager{
     int i = 0;
     counters.forEach((x)=>{
       // zero is reserved for "Subjects.firstOne"
-      if (counter.subject != Subject.firstOne && x.znoTimeDifference().compareTo(counter.znoTimeDifference()) < 0 ){
+      if (counter.subject == Subject.firstOne || x.znoTimeDifference().compareTo(counter.znoTimeDifference()) > 0 ){
         i++  
       }
     });
@@ -159,4 +167,15 @@ class SortCounterManager extends CounterManager{
     counters.remove(counter);
     SubjectManager.subjectsShown.remove(counter.subject);
   }
+}
+int getZnoYear() {
+  int znoYear = 0;
+  var curDate = DateTime.now();
+  if (curDate.month >= 7) {
+    znoYear = curDate.year + 1;
+  } else {
+    znoYear = curDate.year;
+  }
+  print("ZNOYear is :" + znoYear.toString());
+  return znoYear;
 }

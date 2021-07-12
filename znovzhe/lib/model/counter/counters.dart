@@ -154,7 +154,7 @@ class SortCounterManager extends CounterManager{
     int i = 0;
     counters.forEach((x)=>{
       // zero is reserved for "Subjects.firstOne"
-      if (counter.subject == Subject.firstOne || x.znoTimeDifference().compareTo(counter.znoTimeDifference()) > 0 ){
+      if (counter.subject == Subject.firstOne || x.znoTimeDifference().compareTo(counter.znoTimeDifference()) < 0 ){
         i++  
       }
     });

@@ -108,7 +108,7 @@ class SubjectValues {
 
   static DateTime getZNODateTime(BuildContext context, Subject _subject) {
     DateTime resultDate;
-    var znoYear = SimpleCounterManager().znoYear;
+    var znoYear = SortCounterManager().znoYear;
     switch (_subject) {
       case Subject.english:
         resultDate = DateTime(znoYear, 5, 25);

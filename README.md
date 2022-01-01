@@ -20,4 +20,3 @@ This project is a timer for the high school graduates in Ukraine. It counts the 
 5. Dark mode switch.
 
 ![Phone-main](https://user-images.githubusercontent.com/46402350/115594505-7e47b480-a2de-11eb-8b2b-956a45443ab8.png)
-

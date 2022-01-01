@@ -1,15 +1,13 @@
 import 'package:ZnoNeZaHoramy/model/subjects/subjectManager.dart';
 import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
-import 'package:ZnoNeZaHoramy/viewmodel/theme.dart';
+import 'package:ZnoNeZaHoramy/viewmodel/subjectIcons.dart';
 import 'package:ZnoNeZaHoramy/viewmodel/theme.dart';
 import 'package:ZnoNeZaHoramy/model/counter/znoCountersSave.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/cupertino.dart';
-import '../../view/addSubject/addSubjectCounter.dart';
 import '../../view/main/main.dart';
 
 class CounterManager {
-  CounterManager._();
   List<ZnoCounter> counters = [];
   Map<Subject, Duration> timeLeft = Map();
   bool areCountersInit = false;
@@ -31,23 +29,26 @@ class CounterManager {
 }
 
 class SimpleCounterManager extends CounterManager {
-   static final SimpleCounterManager _manager = SimpleCounterManager._internal();
-   factory SimpleCounterManager() {
+  static final SimpleCounterManager _manager = SimpleCounterManager._internal();
+  factory SimpleCounterManager() {
     return _manager;
   }
   SimpleCounterManager._internal() : super._internal();
 
   ThemeSelector _themeSelector;
-  int znoYear = 0; // is changed every app reload depending if the zno has been passed 
-  
-  
+  int znoYear =
+      0; // is changed every app reload depending if the zno has been passed
 
   @override
   void init() {
     _themeSelector = ThemeSelector();
     znoYear = getZnoYear();
     print("ZNOYear for the first ZNOCounter is : " + znoYear.toString());
-    var firstSubjectTime = DateTime(znoYear, 5, 21, 9);
+    SubjectValues.getZNODateTime(Subject.firstOne)
+        .then((firstSubjectTime) => {assignFirst(firstSubjectTime)});
+  }
+
+  void assignFirst(DateTime firstSubjectTime) {
     add(ZnoCounter(Subject.firstOne, firstSubjectTime));
     timeLeft[Subject.firstOne] = counters[0].znoTimeDifference();
   }
@@ -96,30 +97,30 @@ class SimpleCounterManager extends CounterManager {
   }
 }
 
-class SortCounterManager extends CounterManager{
-
+class SortCounterManager extends CounterManager {
   static final _manager = SortCounterManager._internal();
-  factory SortCounterManager(){
+  factory SortCounterManager() {
     return _manager;
   }
   SortCounterManager._internal() : super._internal();
   int znoYear;
 
-   ThemeSelector _themeSelector;
+  ThemeSelector _themeSelector;
   @override
   void init() {
     _themeSelector = ThemeSelector();
 
-    znoYear = getZnoYear(); 
+    znoYear = getZnoYear();
     print("ZNOYear for the first ZNOCounter is : " + znoYear.toString());
     var firstSubjectTime = DateTime(znoYear, 5, 21, 9);
-    
+
     add(ZnoCounter(Subject.firstOne, firstSubjectTime));
     timeLeft[Subject.firstOne] = counters[0].znoTimeDifference();
   }
+
 // Late initalization for the fields(used for the async await methods)
-@override
-  void lateInit(BuildContext context, State state) async{
+  @override
+  void lateInit(BuildContext context, State state) async {
     var potentialCounters = await ZnoCountersSave.init();
     for (var i in potentialCounters) {
       SubjectManager.add(context, i);
@@ -130,6 +131,7 @@ class SortCounterManager extends CounterManager{
     }
     state.setState(() {});
   }
+
 // starts the counters
   @override
   start(DynamicState view, BuildContext context) async {
@@ -148,19 +150,21 @@ class SortCounterManager extends CounterManager{
       }
     }
   }
+
 // ads a new counter
   @override
   add(ZnoCounter counter) {
     int i = 0;
-    counters.forEach((x)=>{
-      // zero is reserved for "Subjects.firstOne"
-      if (counter.subject == Subject.firstOne || x.znoTimeDifference().compareTo(counter.znoTimeDifference()) < 0 ){
-        i++  
-      }
-    });
-    counters.insert(i,counter);
+    counters.forEach((x) => {
+          // zero is reserved for "Subjects.firstOne"
+          if (counter.subject == Subject.firstOne ||
+              x.znoTimeDifference().compareTo(counter.znoTimeDifference()) < 0)
+            {i++}
+        });
+    counters.insert(i, counter);
     SubjectManager.subjectsShown.add(counter.subject);
   }
+
 // removes a counter
   @override
   remove(ZnoCounter counter) {
@@ -168,6 +172,7 @@ class SortCounterManager extends CounterManager{
     SubjectManager.subjectsShown.remove(counter.subject);
   }
 }
+
 int getZnoYear() {
   int znoYear = 0;
   var curDate = DateTime.now();

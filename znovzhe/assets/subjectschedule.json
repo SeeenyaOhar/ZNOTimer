@@ -1,0 +1,61 @@
+[{
+        "subject": "english",
+        "month": 5,
+        "day": 7
+    },
+    {
+        "subject": "ukrainianLanguageLiterature",
+        "month": 5,
+        "day": 31
+    },
+    {
+        "subject": "math",
+        "month": 6,
+        "day": 3
+    },
+    {
+        "subject": "biology",
+        "month": 6,
+        "day": 17
+    },
+    {
+        "subject": "history",
+        "month": 6,
+        "day": 10
+    },
+    {
+        "subject": "physics",
+        "month": 5,
+        "day": 23
+    },
+    {
+        "subject": "germanLanguage",
+        "month": 6,
+        "day": 6
+    },
+    {
+        "subject": "spanishLanguage",
+        "month": 6,
+        "day": 6
+    },
+    {
+        "subject": "geography",
+        "month": 6,
+        "day": 14
+    },
+    {
+        "subject": "chemistry",
+        "month": 5,
+        "day": 26
+    },
+    {
+        "subject": "frenchLanguage",
+        "month": 6,
+        "day": 6
+    },
+    {
+        "subject": "firstOne",
+        "month": 5,
+        "day": 23
+    }
+]

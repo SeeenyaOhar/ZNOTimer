@@ -1,4 +1,3 @@
-
 import 'package:ZnoNeZaHoramy/model/counter/counters.dart';
 import 'package:ZnoNeZaHoramy/model/counter/znoCountersSave.dart';
 import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
@@ -8,13 +7,13 @@ import 'package:flutter/material.dart';
 
 class SubjectManager {
   static List<Subject> subjectsShown = [];
-   static Map<Subject, bool> subjectsAvailable =
+  static Map<Subject, bool> subjectsAvailable =
       Map(); // bool means if this kind of counter is already on the main screen
 
-  static add(BuildContext context, Subject subject) {
+  static add(BuildContext context, Subject subject) async {
     var v = SortCounterManager().counters.where((x) => x.subject == subject);
     if (v.length == 0) {
-      var znoTime = SubjectValues.getZNODateTime(context, subject);
+      var znoTime = await SubjectValues.getZNODateTime(subject);
       var newCounter = ZnoCounter(subject, znoTime);
       SortCounterManager().add(newCounter);
       subjectsAvailable[subject] = true;
@@ -23,14 +22,14 @@ class SubjectManager {
   }
 
   static remove(BuildContext context, Subject subject) {
-    var v =
-        SortCounterManager().counters.where((x) => x.subject == subject).toList();
+    var v = SortCounterManager()
+        .counters
+        .where((x) => x.subject == subject)
+        .toList();
     if (v.length != 0) {
       SortCounterManager().remove(v[0]);
       subjectsAvailable[subject] = false;
       ZnoCountersSave.save();
     }
   }
-
-
 }

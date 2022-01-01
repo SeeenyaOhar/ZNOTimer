@@ -1,23 +1,19 @@
 import 'package:ZnoNeZaHoramy/model/ads/ads.dart';
-import 'package:ZnoNeZaHoramy/model/subjects/subjectManager.dart';
-import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
+
 import 'package:ZnoNeZaHoramy/viewmodel/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:ZnoNeZaHoramy/viewmodel/subjectIcons.dart';
-import 'package:ZnoNeZaHoramy/model/counter/znoCountersSave.dart';
+
 import 'package:flutter/services.dart';
 
-import '../../model/counter/counters.dart';
 import '../../viewmodel/languageManager.dart';
-import '../main/main.dart';
+
 import 'addSubjectCounterComponents.dart';
 
 class AddSubjectWidget extends StatefulWidget {
   AddSubjectWidget({Key key}) : super(key: key);
 
   @override
-  _AddSubjectWidgetState createState() =>
-      _AddSubjectWidgetState();
+  _AddSubjectWidgetState createState() => _AddSubjectWidgetState();
 }
 
 class _AddSubjectWidgetState extends State<AddSubjectWidget> {

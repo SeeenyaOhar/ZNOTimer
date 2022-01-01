@@ -1,6 +1,9 @@
+import 'dart:convert';
+
 import 'package:ZnoNeZaHoramy/model/counter/counters.dart';
 import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'languageManager.dart';
@@ -106,47 +109,20 @@ class SubjectValues {
     }
   }
 
-  static DateTime getZNODateTime(BuildContext context, Subject _subject) {
+  static Future<DateTime> getZNODateTime(Subject _subject) async {
     DateTime resultDate;
     var znoYear = SortCounterManager().znoYear;
-    switch (_subject) {
-      case Subject.english:
-        resultDate = DateTime(znoYear, 5, 25);
-        break;
-      case Subject.ukrainianLanguageLiterature:
-        resultDate = DateTime(znoYear, 6, 1);
-        break;
-      case Subject.math:
-        resultDate = DateTime(znoYear, 5, 28);
-        break;
-      case Subject.biology:
-        resultDate = DateTime(znoYear, 6, 10);
-        break;
-      case Subject.history:
-        resultDate = DateTime(znoYear, 6, 4);
-        break;
-      case Subject.physics:
-        resultDate = DateTime(znoYear, 6, 7);
-        break;
-      case Subject.germanLanguage:
-        resultDate = DateTime(znoYear, 5, 24);
-        break;
-      case Subject.spanishLanguage:
-        resultDate = DateTime(znoYear, 5, 24);
-        break;
-      case Subject.geography:
-        resultDate = DateTime(znoYear, 6, 15);
-        break;
-      case Subject.chemistry:
-        resultDate = DateTime(znoYear, 5, 21);
-        break;
-      case Subject.frenchLanguage:
-        resultDate = DateTime(znoYear, 5, 24);
-        break;
-      case Subject.firstOne:
-        resultDate = DateTime(znoYear, 5, 21);
-        break;
-    }
+
+    String futureContent =
+        await rootBundle.loadString("assets/subjectschedule.json");
+    List subjects = jsonDecode(futureContent);
+    String subjectStr = _subject.toString().split(".")[1];
+    subjects.forEach((element) {
+      if (element["subject"] == subjectStr) {
+        resultDate = DateTime(znoYear, element["month"], element["day"]);
+      }
+    });
+
     return resultDate;
   }
 }

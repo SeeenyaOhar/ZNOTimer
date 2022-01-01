@@ -1,7 +1,7 @@
 import 'package:ZnoNeZaHoramy/model/settings/general/generalModel.dart';
 import 'package:ZnoNeZaHoramy/model/settings/settingsManager.dart';
 import 'package:ZnoNeZaHoramy/view/settings/general/generalSettings.dart';
-import 'package:dynamic_theme/dynamic_theme.dart';
+
 import 'package:flutter/material.dart';
 
 import 'subjectIcons.dart';
@@ -17,11 +17,11 @@ class ThemeSelector {
   ThemeData select(BuildContext context) {
     var counter = DefaultZNOCounter();
     var defaultZnoTime = counter.getZNOTime();
-    darkMode = SettingsManager.getSetting<DarkModeSetting>()[0].getSettingValue(context) as DarkMode;
-    if (darkMode == DarkMode.system){
-       isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
-    }
-    else{
+    darkMode = SettingsManager.getSetting<DarkModeSetting>()[0]
+        .getSettingValue(context) as DarkMode;
+    if (darkMode == DarkMode.system) {
+      isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
+    } else {
       isDark = darkMode == DarkMode.dark;
     }
     ThemeData data;
@@ -71,24 +71,24 @@ class ThemeSelector {
     if ((defaultZnoTime.inDays / 30) < 1) {
       // RED ONE
       var accent = isDark ? Colors.redAccent[600] : Colors.redAccent,
-      data = ThemeData(
-          accentColor: Colors.redAccent,
-          backgroundColor: backgroundColor,
-          scaffoldBackgroundColor: backgroundColor,
-          textTheme: textTheme);
+          data = ThemeData(
+              accentColor: Colors.redAccent,
+              backgroundColor: backgroundColor,
+              scaffoldBackgroundColor: backgroundColor,
+              textTheme: textTheme);
       return data;
     }
   }
 
   static Color getForegroundColor() {
-    if (isDark){
+    if (isDark) {
       return TEXT_COLOR_DARK;
-
-    }
-    else return TEXT_COLOR_WHITE;
+    } else
+      return TEXT_COLOR_WHITE;
   }
 }
-class DynamicState<T extends StatefulWidget> extends State<T>{
+
+class DynamicState<T extends StatefulWidget> extends State<T> {
   bool isDark = false;
 
   @override
@@ -96,6 +96,4 @@ class DynamicState<T extends StatefulWidget> extends State<T>{
     // TODO: implement build
     throw UnimplementedError("Override the method build.");
   }
-
-
 }

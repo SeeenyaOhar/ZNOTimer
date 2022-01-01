@@ -2,8 +2,6 @@ import 'package:ZnoNeZaHoramy/model/counter/counters.dart';
 import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../view/main/main.dart';
-
 class ZnoCountersSave {
   static final String saveKey = "subs";
   static save() async {

@@ -2,19 +2,15 @@ import 'package:ZnoNeZaHoramy/model/settings/settingsManager.dart';
 import 'package:ZnoNeZaHoramy/model/subjects/subjects.dart';
 import 'package:ZnoNeZaHoramy/view/settings/settings.dart';
 import 'package:ZnoNeZaHoramy/viewmodel/theme.dart';
-import 'package:flare_flutter/flare_actor.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:rive/rive.dart';
+
 import 'package:ZnoNeZaHoramy/view/addSubject/addSubjectCounter.dart';
 import 'package:ZnoNeZaHoramy/model/ads/ads.dart';
 import 'package:ZnoNeZaHoramy/viewmodel/languageManager.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:ZnoNeZaHoramy/model/counter/znoCountersSave.dart';
-import 'dart:io';
-import 'dart:math';
+
 import '../../model/counter/counters.dart';
 import '../../model/counter/durationTime.dart';
 import 'mainComponents.dart';
@@ -149,9 +145,7 @@ class MyHomePageState extends DynamicState<MyHomePage> {
     }
     return FloatingActionButton(
       onPressed: () => Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => AddSubjectWidget())),
+          context, MaterialPageRoute(builder: (context) => AddSubjectWidget())),
       tooltip: 'Increment',
       child: Icon(Icons.add),
     );
@@ -211,11 +205,8 @@ class MyHomePageState extends DynamicState<MyHomePage> {
             for (var counter in SortCounterManager().counters) {
               subjectsAlreadyOnScreen.add(counter.subject);
             }
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) =>
-                        AddSubjectWidget()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => AddSubjectWidget()));
           }
         },
         child: body);
@@ -246,7 +237,7 @@ class SubjectTimerView extends StatefulWidget {
 class _SubjectTimerViewState extends State<SubjectTimerView> {
   ZnoCounter _subject;
 
-  _SubjectTimerViewState(ZnoCounter subject){
+  _SubjectTimerViewState(ZnoCounter subject) {
     this._subject = subject;
   }
 
@@ -255,7 +246,6 @@ class _SubjectTimerViewState extends State<SubjectTimerView> {
     return Column(children: <Widget>[
       Divider(),
       ListTile(
-
           leading: SubjectValues.getIcon(context, _subject.subject),
           title: Text(SubjectValues.getSubjectName(context, _subject.subject),
               style: Theme.of(context).textTheme.bodyText2),

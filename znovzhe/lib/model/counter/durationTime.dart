@@ -44,7 +44,7 @@ class DurationTimeConverter {
       var daysString = "";
       var lastNumberDay = (days % 10).round();
       
-      if (days > 10 && days < 20) {
+      if (days >= 10 && days < 20) {
         daysString = LocalizationTool.of(context).days5;
       } else if (days < 10){
         if (days == 1) {
